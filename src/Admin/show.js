@@ -17,7 +17,7 @@ export default class AdminShow extends Component{
   }
 
 onMenuClick(id){
-  axios.get(`http://localhost:8080/menus/`+id)
+  axios.get(`https://madamerouge8080.herokuapp.com/menus/`+id)
   .then((response) => {
     let activemenu = response.data.menu_items.map(function(item){
       return {id: item.id, name: item.name}
@@ -29,7 +29,7 @@ onMenuClick(id){
 }
 
 componentDidMount(){
-  axios.get('http://localhost:8080')
+  axios.get('https://madamerouge8080.herokuapp.com')
   .then((response) => {
     let currentmenu = response.data.menu_items.map(function(item){
       return {id: item.id, name: item.name, dish_type: item.dish_type}
@@ -39,7 +39,8 @@ componentDidMount(){
     )
   })
 
-  axios.get('http://localhost:8080/madame')
+
+  axios.get('https://madamerouge8080.herokuapp.com/madame')
     .then((response) => {
       let allmenus = response.data.map(function(menu) {
         return {id: menu.id, start_at: menu.start_at }
@@ -53,7 +54,7 @@ componentDidMount(){
   removeItem(id){
     axios({
       method: "delete",
-      url: 'http://localhost:8080/menuitems/'+this.state.activemenuId,
+      url: 'https://madamerouge8080.herokuapp.com/menuitems/'+this.state.activemenuId,
       params: {
         recipe_id: id,
         menu_id: this.state.activemenuId

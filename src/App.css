@@ -72,7 +72,13 @@ h2 {
   left: 10%;
   background: linear-gradient(to top, rgba(0,0,0,0)12%, rgba(0,0,0,0.8));
   height: 85%;
+  overflow-y: scroll;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 .menu-list {
   text-align: center;
@@ -313,4 +319,25 @@ button.btn:hover{
 .admin-show{
   float:left;
   color:white;
+}
+
+.user-log-bg {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("imgs/pizza.jpg");
+  background-size: cover;
+}
+
+.make-smaller {
+ width: 20px;
+ height: 20px;
+ margin-left: 5px;
+ line-height: 17px;
+ font-size: 20px;
 }
